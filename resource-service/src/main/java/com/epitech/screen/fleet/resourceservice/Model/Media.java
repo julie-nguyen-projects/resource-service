@@ -1,4 +1,4 @@
-package com.epitech.screen.fleet.resourceservice.Entity;
+package com.epitech.screen.fleet.resourceservice.Model;
 
 import javax.persistence.*;
 

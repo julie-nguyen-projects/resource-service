@@ -1,19 +1,11 @@
-package com.epitech.screen.fleet.resourceservice.Service;
+package com.epitech.screen.fleet.resourceservice.Controller;
 
-import com.epitech.screen.fleet.resourceservice.Entity.Media;
-import com.epitech.screen.fleet.resourceservice.Entity.MediaJpaRepos;
-import com.epitech.screen.fleet.resourceservice.Entity.MediaType;
+import com.epitech.screen.fleet.resourceservice.Model.Media;
+import com.epitech.screen.fleet.resourceservice.Repository.MediaJpaRepos;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.data.repository.query.Param;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.xml.ws.Response;
-import java.net.URI;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
