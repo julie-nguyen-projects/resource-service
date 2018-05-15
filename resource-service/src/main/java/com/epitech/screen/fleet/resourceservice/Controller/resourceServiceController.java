@@ -19,24 +19,25 @@ public class resourceServiceController {
         return mediaJpaRepos.findAll();
     }
 
-    @PostMapping(value = "/resource-media/insert", consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/resource-media", consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
     public Media insertMedia(@RequestBody Media media){
         mediaJpaRepos.save(media);
         return media;
     }
 
-    @DeleteMapping(value = "resource-media/delete/{id}")
+    @DeleteMapping(value = "resource-media/{id}")
     public void updateMedia(@PathVariable Long id){
         mediaJpaRepos.deleteById(id);
 
     }
 
-    @PutMapping(value = "resource-media/update/{id}", consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-    public void updateMedia(@PathVariable long id, @RequestBody Media media) throws NotFoundException {
-        Optional<Media> mediaUpdate = mediaJpaRepos.findById(id);
+
+    @PutMapping(value = "resource-media/", consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
+    public void updateMedia(@RequestBody Media media) throws NotFoundException {
+        Optional<Media> mediaUpdate = mediaJpaRepos.findById(media.getId());
 
         if (!mediaUpdate.isPresent())
-            throw new NotFoundException("id" + id);
+            throw new NotFoundException("id" + media.getId());
 
         Media updatedMedia = mediaUpdate.get();
 
