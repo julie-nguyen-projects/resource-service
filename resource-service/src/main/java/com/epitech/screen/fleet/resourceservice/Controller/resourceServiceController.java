@@ -15,11 +15,13 @@ public class resourceServiceController {
     private MediaJpaRepos mediaJpaRepos;
 
     @GetMapping("/resource-media/all")
+    @CrossOrigin(origins = "http://localhost:8080")
     public List<Media> retrieveAllMediaFile(){
         return mediaJpaRepos.findAll();
     }
 
     @PostMapping(value = "/resource-media", consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
+    @CrossOrigin(origins = "http://localhost:8080")
     public Media insertMedia(@RequestBody Media media){
         mediaJpaRepos.save(media);
         return media;
