@@ -27,6 +27,7 @@ public class resourceServiceController {
         return media;
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @DeleteMapping(value = "resource-media/{id}")
     public void updateMedia(@PathVariable Long id){
         mediaJpaRepos.deleteById(id);
